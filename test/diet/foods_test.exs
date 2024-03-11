@@ -21,7 +21,13 @@ defmodule Diet.FoodsTest do
     end
 
     test "create_food/1 with valid data creates a food" do
-      valid_attrs = %{name: "some name", calories: 42, protein: 120.5, carbohydrates: 120.5, fat: 120.5}
+      valid_attrs = %{
+        name: "some name",
+        calories: 42,
+        protein: 120.5,
+        carbohydrates: 120.5,
+        fat: 120.5
+      }
 
       assert {:ok, %Food{} = food} = Foods.create_food(valid_attrs)
       assert food.name == "some name"
@@ -37,7 +43,14 @@ defmodule Diet.FoodsTest do
 
     test "update_food/2 with valid data updates the food" do
       food = food_fixture()
-      update_attrs = %{name: "some updated name", calories: 43, protein: 456.7, carbohydrates: 456.7, fat: 456.7}
+
+      update_attrs = %{
+        name: "some updated name",
+        calories: 43,
+        protein: 456.7,
+        carbohydrates: 456.7,
+        fat: 456.7
+      }
 
       assert {:ok, %Food{} = food} = Foods.update_food(food, update_attrs)
       assert food.name == "some updated name"
