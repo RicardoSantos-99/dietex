@@ -18,6 +18,7 @@ services:
     container_name: diet
     ports:
       - "4000:4000"
+    platform: linux/amd64
     depends_on:
       - postgres
     environment:

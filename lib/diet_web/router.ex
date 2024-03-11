@@ -2,6 +2,8 @@ defmodule DietWeb.Router do
   use DietWeb, :router
 
   pipeline :api do
+    plug CORSPlug
+
     plug :accepts, ["json"]
   end
 
@@ -9,6 +11,7 @@ defmodule DietWeb.Router do
     pipe_through :api
 
     resources "/foods", FoodController, except: [:new, :edit]
+    options "/foods", FoodController, :options
   end
 
   # Enable LiveDashboard in development
