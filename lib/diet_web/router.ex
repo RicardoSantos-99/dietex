@@ -7,6 +7,8 @@ defmodule DietWeb.Router do
 
   scope "/api", DietWeb do
     pipe_through :api
+
+    resources "/foods", FoodController, except: [:new, :edit]
   end
 
   # Enable LiveDashboard in development
