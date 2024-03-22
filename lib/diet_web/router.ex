@@ -11,7 +11,9 @@ defmodule DietWeb.Router do
     pipe_through :api
 
     resources "/foods", FoodController, except: [:new, :edit]
+    resources "/user_foods", ClientDietsController, except: [:new, :edit]
     options "/foods", FoodController, :options
+    options "/user_foods", ClientDietsController, :options
   end
 
   # Enable LiveDashboard in development
