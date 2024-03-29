@@ -1,4 +1,4 @@
-defmodule Diet.Diets.ClientDiets do
+defmodule Diet.Models.ClientDiets do
   use Ecto.Schema
   import Ecto.Changeset
 

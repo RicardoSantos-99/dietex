@@ -18,7 +18,7 @@ defmodule Diet.DietsFixtures do
         total_protein: 120.5,
         user: "7488a646-e31f-11e4-aace-600308960662"
       })
-      |> Diet.Diets.create_client_diets()
+      |> Diet.Repositories.Diets.create_client_diets()
 
     client_diets
   end

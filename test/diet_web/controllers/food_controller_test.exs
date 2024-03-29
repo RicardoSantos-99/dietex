@@ -3,7 +3,7 @@ defmodule DietWeb.FoodControllerTest do
 
   import Diet.FoodsFixtures
 
-  alias Diet.Foods.Food
+  alias Diet.Models.Food
 
   @create_attrs %{
     name: "some name",

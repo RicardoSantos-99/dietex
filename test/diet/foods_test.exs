@@ -3,8 +3,8 @@ defmodule Diet.FoodsTest do
 
   import Diet.Factory
 
-  alias Diet.Foods
-  alias Diet.Foods.Food
+  alias Diet.Repositories.Foods
+  alias Diet.Models.Food
 
   describe "foods" do
     test "list_foods/0 returns all foods" do

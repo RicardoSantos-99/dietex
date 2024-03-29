@@ -1,5 +1,5 @@
 defmodule DietWeb.ClientDietsJSON do
-  alias Diet.Diets.ClientDiets
+  alias Diet.Models.ClientDiets
 
   @doc """
   Renders a list of user_foods.

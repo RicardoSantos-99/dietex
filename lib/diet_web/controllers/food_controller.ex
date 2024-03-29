@@ -1,8 +1,8 @@
 defmodule DietWeb.FoodController do
   use DietWeb, :controller
 
-  alias Diet.Foods
-  alias Diet.Foods.Food
+  alias Diet.Repositories.Foods
+  alias Diet.Models.Food
 
   action_fallback DietWeb.FallbackController
 

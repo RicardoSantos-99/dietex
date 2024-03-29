@@ -1,7 +1,7 @@
 defmodule Diet.Factory.Models.FoodFactory do
   @moduledoc false
 
-  alias Diet.Foods.Food
+  alias Diet.Models.Food
 
   defmacro __using__(_opts) do
     quote do

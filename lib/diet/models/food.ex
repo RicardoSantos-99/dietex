@@ -1,4 +1,4 @@
-defmodule Diet.Foods.Food do
+defmodule Diet.Models.Food do
   use Ecto.Schema
   import Ecto.Changeset
 

@@ -17,7 +17,7 @@ defmodule Diet.FoodsFixtures do
         name: "some name",
         protein: 120.5
       })
-      |> Diet.Foods.create_food()
+      |> Diet.Repositories.Foods.create_food()
 
     food
   end

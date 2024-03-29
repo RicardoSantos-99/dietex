@@ -1,4 +1,4 @@
-defmodule Diet.Foods do
+defmodule Diet.Repositories.Foods do
   @moduledoc """
   The Foods context.
   """
@@ -6,7 +6,7 @@ defmodule Diet.Foods do
   import Ecto.Query, warn: false
   alias Diet.Repo
 
-  alias Diet.Foods.Food
+  alias Diet.Models.Food
 
   @doc """
   Returns the list of foods.

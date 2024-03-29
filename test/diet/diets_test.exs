@@ -1,13 +1,12 @@
 defmodule Diet.DietsTest do
   use Diet.DataCase
 
-  alias Diet.Diets
+  import Diet.DietsFixtures
+
+  alias Diet.Repositories.Diets
+  alias Diet.Models.ClientDiets
 
   describe "user_foods" do
-    alias Diet.Diets.ClientDiets
-
-    import Diet.DietsFixtures
-
     @invalid_attrs %{
       user: nil,
       foods: nil,

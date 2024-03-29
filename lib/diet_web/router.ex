@@ -14,6 +14,9 @@ defmodule DietWeb.Router do
     resources "/user_foods", ClientDietsController, except: [:new, :edit]
     options "/foods", FoodController, :options
     options "/user_foods", ClientDietsController, :options
+    post "/users/register", UserRegistrationController, :create
+    put "/users/confirm/:token", UserConfirmationController, :edit
+    post "/users/log_in", UserLoginController, :create
   end
 
   # Enable LiveDashboard in development
