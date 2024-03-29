@@ -45,7 +45,8 @@ defmodule Diet.MixProject do
       {:cors_plug, "~> 3.0"},
       {:swoosh, "~> 1.5"},
       {:bcrypt_elixir, "~> 3.0"},
-      {:hackney, "~> 1.9"}
+      {:hackney, "~> 1.9"},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
 
