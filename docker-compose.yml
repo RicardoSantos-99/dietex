@@ -12,17 +12,3 @@ services:
       - ./data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-
-  diet:
-    build: .
-    container_name: diet
-    ports:
-      - "4000:4000"
-    platform: linux/amd64
-    depends_on:
-      - postgres
-    environment:
-      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/postgres
-      - SECRET_KEY_BASE=tekc2WiCxxNkegdToXitOJxOpRjvPViVACt+LZ//M5B4oFNTucmhMsFelP52qlSf
-    volumes:
-      - .:/app

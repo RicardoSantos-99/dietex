@@ -12,7 +12,7 @@
 
 # Insert some data into the foods table
 
-alias Diet.Foods.Food
+alias Diet.Foods
 
 foods = [
   %{name: "Apple", calories: 95, protein: 0.5, carbohydrates: 25, fat: 0.3},
