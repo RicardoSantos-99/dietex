@@ -2,6 +2,8 @@ defmodule Diet.Diets.ClientDiets do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @params ~w(user foods total_calories total_protein total_carbohydrates total_fat)a
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "user_foods" do
@@ -18,7 +20,7 @@ defmodule Diet.Diets.ClientDiets do
   @doc false
   def changeset(client_diets, attrs) do
     client_diets
-    |> cast(attrs, [:user, :foods, :total_calories, :total_protein, :total_carbohydrates, :total_fat])
-    |> validate_required([:user, :total_calories, :total_protein, :total_carbohydrates, :total_fat])
+    |> cast(attrs, @params)
+    |> validate_required(@params)
   end
 end

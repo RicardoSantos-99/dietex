@@ -2,6 +2,8 @@ defmodule Diet.Foods.Food do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @params ~w(name calories protein carbohydrates fat)a
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "foods" do
@@ -17,7 +19,7 @@ defmodule Diet.Foods.Food do
   @doc false
   def changeset(food, attrs) do
     food
-    |> cast(attrs, [:name, :calories, :protein, :carbohydrates, :fat])
-    |> validate_required([:name, :calories, :protein, :carbohydrates, :fat])
+    |> cast(attrs, @params)
+    |> validate_required(@params)
   end
 end

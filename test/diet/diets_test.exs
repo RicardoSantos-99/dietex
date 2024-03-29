@@ -8,7 +8,14 @@ defmodule Diet.DietsTest do
 
     import Diet.DietsFixtures
 
-    @invalid_attrs %{user: nil, foods: nil, total_calories: nil, total_protein: nil, total_carbohydrates: nil, total_fat: nil}
+    @invalid_attrs %{
+      user: nil,
+      foods: nil,
+      total_calories: nil,
+      total_protein: nil,
+      total_carbohydrates: nil,
+      total_fat: nil
+    }
 
     test "list_user_foods/0 returns all user_foods" do
       client_diets = client_diets_fixture()
@@ -21,7 +28,14 @@ defmodule Diet.DietsTest do
     end
 
     test "create_client_diets/1 with valid data creates a client_diets" do
-      valid_attrs = %{user: "7488a646-e31f-11e4-aace-600308960662", foods: %{}, total_calories: 42, total_protein: 120.5, total_carbohydrates: 120.5, total_fat: 120.5}
+      valid_attrs = %{
+        user: "7488a646-e31f-11e4-aace-600308960662",
+        foods: %{},
+        total_calories: 42,
+        total_protein: 120.5,
+        total_carbohydrates: 120.5,
+        total_fat: 120.5
+      }
 
       assert {:ok, %ClientDiets{} = client_diets} = Diets.create_client_diets(valid_attrs)
       assert client_diets.user == "7488a646-e31f-11e4-aace-600308960662"
@@ -38,9 +52,19 @@ defmodule Diet.DietsTest do
 
     test "update_client_diets/2 with valid data updates the client_diets" do
       client_diets = client_diets_fixture()
-      update_attrs = %{user: "7488a646-e31f-11e4-aace-600308960668", foods: %{}, total_calories: 43, total_protein: 456.7, total_carbohydrates: 456.7, total_fat: 456.7}
 
-      assert {:ok, %ClientDiets{} = client_diets} = Diets.update_client_diets(client_diets, update_attrs)
+      update_attrs = %{
+        user: "7488a646-e31f-11e4-aace-600308960668",
+        foods: %{},
+        total_calories: 43,
+        total_protein: 456.7,
+        total_carbohydrates: 456.7,
+        total_fat: 456.7
+      }
+
+      assert {:ok, %ClientDiets{} = client_diets} =
+               Diets.update_client_diets(client_diets, update_attrs)
+
       assert client_diets.user == "7488a646-e31f-11e4-aace-600308960668"
       assert client_diets.foods == %{}
       assert client_diets.total_calories == 43

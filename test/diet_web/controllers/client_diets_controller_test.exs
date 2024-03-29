@@ -21,7 +21,14 @@ defmodule DietWeb.ClientDietsControllerTest do
     total_carbohydrates: 456.7,
     total_fat: 456.7
   }
-  @invalid_attrs %{user: nil, foods: nil, total_calories: nil, total_protein: nil, total_carbohydrates: nil, total_fat: nil}
+  @invalid_attrs %{
+    user: nil,
+    foods: nil,
+    total_calories: nil,
+    total_protein: nil,
+    total_carbohydrates: nil,
+    total_fat: nil
+  }
 
   setup %{conn: conn} do
     {:ok, conn: put_req_header(conn, "accept", "application/json")}
@@ -61,7 +68,10 @@ defmodule DietWeb.ClientDietsControllerTest do
   describe "update client_diets" do
     setup [:create_client_diets]
 
-    test "renders client_diets when data is valid", %{conn: conn, client_diets: %ClientDiets{id: id} = client_diets} do
+    test "renders client_diets when data is valid", %{
+      conn: conn,
+      client_diets: %ClientDiets{id: id} = client_diets
+    } do
       conn = put(conn, ~p"/api/user_foods/#{client_diets}", client_diets: @update_attrs)
       assert %{"id" => ^id} = json_response(conn, 200)["data"]
 

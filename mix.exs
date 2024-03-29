@@ -42,7 +42,7 @@ defmodule Diet.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:plug_cowboy, "~> 2.5"},
-      {:cors_plug, "~> 3.0"},
+      {:cors_plug, "~> 3.0"}
     ]
   end
 

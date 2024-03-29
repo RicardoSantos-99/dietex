@@ -52,7 +52,6 @@ defmodule Diet.Diets do
   def create_client_diets(attrs \\ %{}) do
     %ClientDiets{}
     |> ClientDiets.changeset(attrs)
-    |> IO.inspect()
     |> Repo.insert()
   end
 
