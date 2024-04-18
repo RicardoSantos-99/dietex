@@ -50,6 +50,8 @@ defmodule Diet.Repositories.Foods do
 
   """
   def create_food(attrs \\ %{}) do
+    IO.inspect(attrs, label: "attrs")
+
     %Food{}
     |> Food.changeset(attrs)
     |> Repo.insert()

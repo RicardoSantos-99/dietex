@@ -21,5 +21,10 @@ defmodule Diet.Models.Food do
     food
     |> cast(attrs, @params)
     |> validate_required(@params)
+    |> validate_number(:calories, greater_than: 0)
+    |> validate_number(:protein, greater_than: 0)
+    |> validate_number(:carbohydrates, greater_than: 0)
+    |> validate_number(:fat, greater_than: 0)
+    |> unique_constraint(:name)
   end
 end
