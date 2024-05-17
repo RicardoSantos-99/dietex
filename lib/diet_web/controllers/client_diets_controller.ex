@@ -11,8 +11,8 @@ defmodule DietWeb.ClientDietsController do
     render(conn, :index, user_foods: user_foods)
   end
 
-  def create(conn, %{"foods" => client_diets_params}) do
-    diet = get_total(client_diets_params)
+  def create(conn, %{"foods" => client_diets_params, "user" => user, "total_water" => water}) do
+    diet = get_total(client_diets_params) |> Map.put(:user, user) |> Map.put(:total_water, water)
 
     with {:ok, %ClientDiets{} = client_diets} <- Diets.create_client_diets(diet) do
       conn
@@ -34,7 +34,6 @@ defmodule DietWeb.ClientDietsController do
       }
     end)
     |> Map.put(:foods, %{foods: client_diets_params})
-    |> Map.put(:user, Ecto.UUID.generate())
   end
 
   def show(conn, %{"id" => id}) do

@@ -53,6 +53,7 @@ defmodule Diet.Repositories.Diets do
     %ClientDiets{}
     |> ClientDiets.changeset(attrs)
     |> Repo.insert()
+    |> dbg()
   end
 
   @doc """

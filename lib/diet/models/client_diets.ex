@@ -7,12 +7,13 @@ defmodule Diet.Models.ClientDiets do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "user_foods" do
-    field :user, Ecto.UUID
+    field :user, :string
     field :foods, :map
     field :total_calories, :integer
     field :total_protein, :float
     field :total_carbohydrates, :float
     field :total_fat, :float
+    field :total_water, :float
 
     timestamps(type: :utc_datetime)
   end
@@ -20,7 +21,7 @@ defmodule Diet.Models.ClientDiets do
   @doc false
   def changeset(client_diets, attrs) do
     client_diets
-    |> cast(attrs, @params)
+    |> cast(attrs, [:total_water] ++ @params)
     |> validate_required(@params)
   end
 end
