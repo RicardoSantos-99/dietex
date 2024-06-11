@@ -12,8 +12,10 @@ defmodule DietWeb.Router do
 
     resources "/foods", FoodController, except: [:new, :edit]
     resources "/user_foods", ClientDietsController, except: [:new, :edit]
+    resources "/imc", ImcController, only: [:index, :create, :show]
     options "/foods", FoodController, :options
     options "/user_foods", ClientDietsController, :options
+    options "/imc", ImcController, :options
     post "/users/register", UserRegistrationController, :create
     put "/users/confirm/:token", UserConfirmationController, :edit
     post "/users/log_in", UserLoginController, :create
